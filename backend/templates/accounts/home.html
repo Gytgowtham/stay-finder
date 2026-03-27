@@ -1,0 +1,45 @@
+{% extends "accounts/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5 text-center">
+
+    <h2 class="mb-5 page-title">What are you looking for?</h2>
+
+    <div class="row justify-content-center g-4">
+
+        <!-- PG -->
+        <div class="col-md-4">
+            <div class="card-box fade-up" onclick="go('PG')">
+                <img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2">
+                <div class="card-title-overlay">PG</div>
+            </div>
+        </div>
+
+        <!-- RENTAL -->
+        <div class="col-md-4">
+            <div class="card-box fade-up delay-1" onclick="go('RENTAL')">
+                <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994">
+                <div class="card-title-overlay">Rental House</div>
+            </div>
+        </div>
+
+        <!-- HOTEL -->
+        <div class="col-md-4">
+            <div class="card-box fade-up delay-2" onclick="go('HOTEL')">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb">
+                <div class="card-title-overlay">Hotel</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+function go(type){
+    window.location.href = "/select-area/?type=" + type;
+}
+</script>
+
+{% endblock %}

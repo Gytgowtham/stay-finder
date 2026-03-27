@@ -1,0 +1,51 @@
+{% extends "accounts/base.html" %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+
+        <div class="col-md-5 col-lg-4">
+
+            <!-- LOGIN CARD -->
+            <div class="login-card p-4">
+
+                <h3 class="text-center mb-4 page-title">Login</h3>
+
+                <form method="POST">
+                    {% csrf_token %}
+
+                    <div class="mb-3">
+                        <input type="text"
+                               name="username"
+                               class="form-control form-control-lg"
+                               placeholder="Username"
+                               required>
+                    </div>
+
+                    <div class="mb-3">
+                        <input type="password"
+                               name="password"
+                               class="form-control form-control-lg"
+                               placeholder="Password"
+                               required>
+                    </div>
+
+                    <button type="submit" class="main-btn mt-2">
+                        Login
+                    </button>
+                </form>
+
+                <p class="text-center mt-4 small">
+                    No account?
+                    <a href="/signup/" class="text-dark fw-semibold">Signup</a>
+                </p>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
